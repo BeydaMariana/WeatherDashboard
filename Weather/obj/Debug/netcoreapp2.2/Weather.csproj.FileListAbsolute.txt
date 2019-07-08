@@ -1,0 +1,14 @@
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\obj\Debug\netcoreapp2.2\Weather.csprojAssemblyReference.cache
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\obj\Debug\netcoreapp2.2\Weather.csproj.CoreCompileInputs.cache
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\obj\Debug\netcoreapp2.2\Weather.RazorAssemblyInfo.cache
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\obj\Debug\netcoreapp2.2\Weather.RazorAssemblyInfo.cs
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\obj\Debug\netcoreapp2.2\Weather.AssemblyInfoInputs.cache
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\obj\Debug\netcoreapp2.2\Weather.AssemblyInfo.cs
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\bin\Debug\netcoreapp2.2\Weather.deps.json
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\bin\Debug\netcoreapp2.2\Weather.runtimeconfig.json
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\bin\Debug\netcoreapp2.2\Weather.runtimeconfig.dev.json
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\bin\Debug\netcoreapp2.2\Weather.dll
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\bin\Debug\netcoreapp2.2\Weather.pdb
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\obj\Debug\netcoreapp2.2\Weather.RazorTargetAssemblyInfo.cache
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\obj\Debug\netcoreapp2.2\Weather.dll
+C:\Users\Beyda\source\repos\WeatherDashboard\Weather\obj\Debug\netcoreapp2.2\Weather.pdb
