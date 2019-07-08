@@ -95,16 +95,6 @@ export class DashboardComponent implements OnInit{
   }
   
 
-  onSubmit(formValue: any) {
-
-    const dashboard = new Dashboard();
-    dashboard.city  = formValue.city;
-    dashboard.date = formValue.date;
-    dashboard.scale = formValue.scale;
-
-    this.weatherService.updtdashboard(dashboard);    
-  }
-
   onCity(formValue: any) {
 
     const dashboard = new Dashboard();
@@ -125,7 +115,6 @@ export class DashboardComponent implements OnInit{
   onDate(formValue: any) {
     const dashboard = new Dashboard();
     dashboard.date  = new Date(formValue.date.year, formValue.date.month-1, formValue.date.day);
-    console.log(dashboard.date);
     
     this.weatherService.updtdate(dashboard);   
   }

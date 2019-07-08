@@ -142,13 +142,20 @@ export class WeatherService {
       })
 
       this.datetemp=weatherDates;
-
+      let i = 0;
       if(this.date != ""){
         weatherDates.forEach(res => {
           if(res == this.date){
             weatherDates=[];
             weatherDates.push(res);
+            let val = temp_max[i];
+            temp_max=[];
+            temp_max.push(val);
+            val = temp_min[i];
+            temp_min=[];
+            temp_min.push(val);
           }
+          i++;
         });
       }
 

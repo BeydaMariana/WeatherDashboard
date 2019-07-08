@@ -3,8 +3,6 @@
       <div class="col-8" id="chartWeather">
         <canvas id="canvas">{{ chart }}</canvas> 
       </div>
-      <!-- 
-    (submit)= "onSubmit(formDashboard.value)"-->
       <div class="col-4">
         <form [formGroup]= "formDashboard" >
             <div class="form-group" (change)="onCity(formDashboard.value)" >

@@ -12189,11 +12189,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Beyda\\source\\repos\\WeatherDashboard\\Weather\\Weather.csproj",
+      "projectUniqueName": "C:\\Users\\Beyda\\Documents\\GitHub\\WeatherDashboard\\WeatherDashboard\\Weather\\Weather.csproj",
       "projectName": "Weather",
-      "projectPath": "C:\\Users\\Beyda\\source\\repos\\WeatherDashboard\\Weather\\Weather.csproj",
+      "projectPath": "C:\\Users\\Beyda\\Documents\\GitHub\\WeatherDashboard\\WeatherDashboard\\Weather\\Weather.csproj",
       "packagesPath": "C:\\Users\\Beyda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Beyda\\source\\repos\\WeatherDashboard\\Weather\\obj\\",
+      "outputPath": "C:\\Users\\Beyda\\Documents\\GitHub\\WeatherDashboard\\WeatherDashboard\\Weather\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
