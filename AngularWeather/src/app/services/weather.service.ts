@@ -74,19 +74,6 @@ export class WeatherService {
     });
   }
 
-  updtdashboard(dashboard: Dashboard) {
-    
-    const data = new Dashboard();
-    data.city = dashboard.city;
-    data.date = dashboard.date;
-    data.scale = dashboard.scale;
-
-    this.http.post('http://localhost:58571/api/Dashboard/update', data)
-    .subscribe(resp => {
-      resp;
-    });
-  }
-
   
 
   public onLoadWeather(){
