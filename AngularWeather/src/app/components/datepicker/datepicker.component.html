@@ -1,0 +1,4 @@
+<div [formGroup]="parentForm">
+    <label for="{{formControlname}}">{{formLabel}}</label>
+  <input formControlName="{{formControlname}}" [minDate]="{year: 2019, month: 7, day: 3}" type="date" class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+</div>

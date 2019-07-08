@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+      <div class="col-8" id="chartWeather">
+        <canvas id="canvas">{{ chart }}</canvas> 
+      </div>
+      <!-- 
+    (submit)= "onSubmit(formDashboard.value)"-->
+      <div class="col-4">
+        <form [formGroup]= "formDashboard" >
+            <div class="form-group" (change)="onCity(formDashboard.value)" >
+              <label for="city">Ciudad</label>
+              <select class="form-control" formControlName="city" id="city">
+                <option *ngFor="let summary of summaries, let indexp = index" value={{indexp}}>{{summary.city}}</option>
+              </select>              
+            </div>
+            <div class="form-group" (change)="onScale(formDashboard.value)">
+              <label for="scale">Escala</label>
+              <select class="form-control" formControlName="scale" id="scale" >
+                <option value="0">Celsius</option>
+                  <option value="1">Fahrenheit</option>
+              </select>              
+            </div>
+            <app-datepicker [parentForm]="formDashboard" [formControlname]="'date'" [formLabel]="'Fecha (del 6 al 20 de Julio):'" (change)="onDate(formDashboard.value)"></app-datepicker>   
+          <p><small>Seleccionar fecha entre el {{ date[0] }} y {{ date[13] }}</small></p>
+          </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+          <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Temperatura</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let tempdata of datatemp2; index as i">                
+                <td>{{ datetemp2[i] }}</td>
+                <td>{{ datatemp2[i] }}</td>
+              </tr>
+              </tbody>
+            </table>
+      </div>
+      <div class="col-4">
+        <button type="submit" (click)="DataTable()" class="btn btn-primary">Actualizar Tabla</button>
+      </div>
+    </div>
+  </div>
+
+  
