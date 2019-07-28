@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Weather.Models;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace Weather.Controllers
 {
@@ -26,27 +28,60 @@ namespace Weather.Controllers
 
             dashboard.Add(new DashboardViewModel
             {
-                City = "Obregón"
+                City = "Obregón",
+                CityCode = "4013704",
+                Scale = "M"
             });
             dashboard.Add(new DashboardViewModel
             {
-                City = "Hermosillo"
+                City = "Hermosillo",
+                CityCode = "4004898",
+                Scale = "M"
             });
             dashboard.Add(new DashboardViewModel
             {
-                City = "Navojoa"
+                City = "Navojoa",
+                CityCode = "3995019",
+                Scale = "M"
             });
             dashboard.Add(new DashboardViewModel
             {
-                City = "Nogales"
+                City = "Nogales",
+                CityCode = "4004886",
+                Scale = "M"
             });
 
             return Ok(dashboard);
         }
 
+        [HttpGet("[action]/{city}&{unit}")]
+        public async Task<IActionResult> City(string city, string unit)
+        {
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    client.BaseAddress = new Uri("https://api.weatherbit.io");
+                    var response = await client.GetAsync($"/v2.0/forecast/daily?city_id={city}&key=0c6c94f36921468e8d58e95901ef9d6b&days=15&units={unit}");
+                    response.EnsureSuccessStatusCode();
 
-         
-        [HttpPost("city")]
+                    IList<OpenWeatherResponse> searchResults = new List<OpenWeatherResponse>();
+                    var stringResult = await response.Content.ReadAsStringAsync();
+                    var rawWeather = JsonConvert.DeserializeObject<OpenWeatherResponse>(stringResult);
+                    return Ok(new
+                    {
+                        rawWeather.Data
+                    }
+                    );
+                }
+                catch (HttpRequestException httpRequestException)
+                {
+                    return BadRequest($"Error getting weather from OpenWeather: {httpRequestException.Message}");
+                }
+            }
+        }
+
+        [HttpPost("cityPausa")]
           public ActionResult City([FromBody] DashboardViewModel city)
           {
             List<DashboardViewModel> url = new List<DashboardViewModel>();

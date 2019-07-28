@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8" id="chartWeather" *ngIf="!dashboard">
+      <canvas id="canvas">{{ chart }}</canvas> 
+    </div>
+    <div class="col-4">
+      <form #clienteForm="ngForm" [formGroup]= "formDashboard" (loaded)="Filter($event.target.value)"  >
+          <div class="form-group" >
+            <label for="city">Ciudad</label>
+            <select class="form-control" formControlName="city" id="city" (change)="filtrarCiudad($event.target.value)">
+              <option *ngFor="let summary of datos" value={{summary.cityCode}}>{{summary.city}}</option>
+            </select>              
+          </div>
+          <div class="form-group">
+            <label for="scale">Escala</label>
+            <select class="form-control" formControlName="scale" id="scale" (change)="filtrarScale($event.target.value)">
+              <option value="M">Celsius</option>
+                <option value="I">Fahrenheit</option>
+            </select>              
+          </div>
+          <app-datepicker [parentForm]="formDashboard" [formControlname]="'date'" [formLabel]="'Fecha (del 6 al 20 de Julio):'" (change)="onDate(formDashboard.value)"></app-datepicker>   
+        <p><small>Seleccionar fecha entre el </small></p>
+        </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">Fecha</th>
+              <th scope="col">Temperatura</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tempdata of data; index as i">                
+              <td>{{ tempdata.datetime }}</td>
+              <td>{{ tempdata.temp }}</td>
+            </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>
+
+

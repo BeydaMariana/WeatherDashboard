@@ -109,7 +109,7 @@ export class DashboardComponent implements OnInit{
     dashboard.city  = formValue.city;
     dashboard.scale = formValue.scale;
     
-    this.weatherService.updtscale(dashboard); 
+    this.weatherService.updtscale(dashboard);  
   }
 
   onDate(formValue: any) {

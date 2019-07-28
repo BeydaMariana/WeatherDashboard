@@ -11,8 +11,11 @@ import { empty } from 'rxjs';
 })
 export class WeatherService {
 
+  private urlEndPoint: string = "http://localhost:58571/api/Dashboard/";
+
   chart: [];
-  scale: string="0";
+  scale: string="M";
+  city: string="";
   date: string="";
   date_max: string;
   date_min: string;
@@ -48,11 +51,9 @@ export class WeatherService {
     });
   }
 
-  updtscale(scale: Dashboard){
-    const data = new Dashboard();
-    data.scale = scale.scale;
+  updtscale(datos: Dashboard){
 
-    this.http.post('http://localhost:58571/api/Dashboard/scale', data)
+    this.http.post('http://localhost:58571/api/Dashboard/scale', datos.scale)
     .subscribe((resp: any) => {
       let scl = resp.map(resp => resp.scale);
       this.scale = scl;

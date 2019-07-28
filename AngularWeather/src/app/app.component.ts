@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from './services/weather.service';
+import { PrincipalService } from './services/principal.service';
+import { Dashboard } from 'src/app/Models/DashboardModel';
 import {Chart} from 'chart.js';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 
@@ -10,11 +12,11 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 })
 export class AppComponent implements OnInit {
 
-  constructor (private _weather: WeatherService){
+  constructor (private _principal: PrincipalService,
+    private _weather: WeatherService){
 
   }
   ngOnInit(){
-    this._weather.onLoadWeather();
   }
 
   
