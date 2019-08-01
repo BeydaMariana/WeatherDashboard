@@ -18,6 +18,8 @@ export class PrincipalComponent implements OnInit {
   formDashboard: FormGroup;
 
   data: Data[];
+
+  chart: [];
   
 
   constructor(private principalService: PrincipalService,
